@@ -91,7 +91,7 @@ void trackers::Tracker::handleRequests() {
         // Parse request
         MPI_Recv(&requestType, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
-        ClientRequest request = indexToRequest(requestType);
+        TrackerRequest request = indexToTrackerRequest(requestType);
 
         // Get client index
         clientIndex = status.MPI_SOURCE;
@@ -138,6 +138,12 @@ void trackers::Tracker::handleUpdateSwarm(int clientIndex, string fileName) {
     // Get client swarm for requested file
     File *file = new File(fileName);
     unordered_set<int> swarm = this->swarms[file];
+
+    // If client is not in swarm, add it
+    if (swarm.find(clientIndex) == swarm.end()) {
+        swarm.insert(clientIndex);
+        this->swarms[file] = swarm;
+    }
 
     int swarmSize = swarm.size();
 
