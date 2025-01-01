@@ -12,12 +12,6 @@
 namespace trackers {
     class Tracker {
     private:
-        enum ClientStatus {
-            SEED,
-            PEER,
-            DONE
-        };
-
         void printSwarms();
 
     public:
@@ -26,11 +20,19 @@ namespace trackers {
         ~Tracker() = default;
 
         void awaitClientInput();
+        void handleRequests();
+        void handleSeedRequest(int clientIndex);
+        void handleDownloadComplete(int clientIndex);
+        void handleFinishedClient(int clientIndex);
+        void handleUpdateSwarm(int clientIndex, string fileName);
+
+        void sendACK(int clientIndex);
 
         int clientCount;
         char ACK[4] = "ACK";
 
         std::unordered_map<int, ClientStatus> clientStates;
         std::unordered_map<File *, unordered_set<int> > swarms;   // (File, Set<clientIndex>)
+        std::unordered_map<string, int> segmentCounts;            // (fileName, segmentCount)
     };
 }

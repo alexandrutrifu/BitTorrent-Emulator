@@ -57,6 +57,8 @@ void trackers::Tracker::awaitClientInput()
                 unordered_set<int> clients;
                 clients.insert(index);
 
+                this->clientStates[index] = SEED;
+
                 this->swarms[file] = clients;
 
                 continue;
@@ -64,6 +66,7 @@ void trackers::Tracker::awaitClientInput()
 
             // If file was already in records, update swarm
             this->swarms[file].insert(index);
+            this->clientStates[index] = SEED;
         }
     }
 
@@ -72,4 +75,93 @@ void trackers::Tracker::awaitClientInput()
 
     // After every client has sent their input, broadcast ACK signal
     MPI_Bcast(this->ACK, 4, MPI_CHAR, 0, MPI_COMM_WORLD);
+}
+
+void trackers::Tracker::handleRequests() {
+    int pendingClients = this->clientCount;
+
+    // Answer client requests until all clients are done
+    while (pendingClients) {
+        MPI_Status status;
+        int requestType;
+        int clientIndex;
+
+        unordered_set<int> swarm;
+
+        // Parse request
+        MPI_Recv(&requestType, 1, MPI_INT, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+
+        ClientRequest request = indexToRequest(requestType);
+
+        // Get client index
+        clientIndex = status.MPI_SOURCE;
+
+        // Handle request cases
+        switch (request) {
+            case REQUEST_SEEDS:
+                handleSeedRequest(clientIndex);
+            case DOWNLOAD_COMPLETE:
+                handleDownloadComplete(clientIndex);
+                break;
+            case FINISHED:
+                handleFinishedClient(clientIndex);
+                pendingClients--;
+                break;
+            case UPDATE_SWARM:
+                // Receive file name
+                char fileName[255];
+
+                MPI_Recv(fileName, 255, MPI_CHAR, clientIndex, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+
+                handleUpdateSwarm(clientIndex, fileName);
+                break;
+        }
+    }
+}
+
+void trackers::Tracker::handleSeedRequest(int clientIndex) {
+    MPI_Status status;
+
+    // Receive file name
+    char fileName[255];
+
+    MPI_Recv(fileName, 255, MPI_CHAR, clientIndex, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+
+    // Send file segment count
+    MPI_Send(&this->segmentCounts[fileName], 1, MPI_INT, clientIndex, 0, MPI_COMM_WORLD);
+
+    // Send file seeds
+    handleUpdateSwarm(clientIndex, fileName);
+}
+
+void trackers::Tracker::handleUpdateSwarm(int clientIndex, string fileName) {
+    // Get client swarm for requested file
+    File *file = new File(fileName);
+    unordered_set<int> swarm = this->swarms[file];
+
+    // Get (int *) array associated with set
+    int *clientArray = new int[swarm.size()];
+
+    int index = 0;
+    for (int client: swarm) {
+        clientArray[index++] = client;
+    }
+
+    // Send seeds to client
+    MPI_Send(clientArray, swarm.size(), MPI_INT, clientIndex, 0, MPI_COMM_WORLD);
+}
+
+void trackers::Tracker::handleDownloadComplete(int clientIndex) {
+    this->clientStates[clientIndex] = SEED;
+    sendACK(clientIndex);
+}
+
+void trackers::Tracker::handleFinishedClient(int clientIndex) {
+    this->clientStates[clientIndex] = DONE;
+    sendACK(clientIndex);
+}
+
+void trackers::Tracker::sendACK(int clientIndex) {
+    // Send ACK to client
+    MPI_Send(this->ACK, 4, MPI_CHAR, clientIndex, 0, MPI_COMM_WORLD);
 }
