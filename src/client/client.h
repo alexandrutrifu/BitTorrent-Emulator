@@ -1,3 +1,6 @@
+#pragma once
+
+#include <mpi.h>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -6,6 +9,7 @@
 #include <vector>
 
 #include "../file.h"
+#include "../common.h"
 
 using namespace std;
 
@@ -17,6 +21,7 @@ namespace clients {
         ~Client() = default;
 
         int parseInput();
+        int sendInputToTracker();
 
         vector<File *> getOwnedFiles() { return ownedFiles; }
         vector<string> getDesiredFiles() { return desiredFiles; }

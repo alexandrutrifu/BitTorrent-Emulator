@@ -1,3 +1,5 @@
+#pragma once
+
 #include <mpi.h>
 #include <iostream>
 
@@ -5,6 +7,7 @@
 #include <unordered_set>
 
 #include "../file.h"
+#include "../common.h"
 
 namespace trackers {
     class Tracker {
@@ -15,6 +18,8 @@ namespace trackers {
             DONE
         };
 
+        void printSwarms();
+
     public:
         Tracker() = default;
         Tracker(int numClients) { clientCount = numClients; }
@@ -23,9 +28,9 @@ namespace trackers {
         void awaitClientInput();
 
         int clientCount;
-        char *ACK = "ACK";
+        char ACK[4] = "ACK";
 
         std::unordered_map<int, ClientStatus> clientStates;
-        std::unordered_map<File *, unordered_set<int>> swarms;   // (File, Set<clientIndex>)
+        std::unordered_map<File *, unordered_set<int> > swarms;   // (File, Set<clientIndex>)
     };
 }

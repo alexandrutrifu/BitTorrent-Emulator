@@ -2,8 +2,11 @@
 
 int clients::Client::parseInput() {
     string inputFileName = "in" + to_string(id) + ".txt";
+
+    // Debug
+    cout << "[CLIENT " << id << "] parsing input file " << inputFileName << "\n";
     
-    ifstream inputFile(inputFileName);
+    ifstream inputFile("/Users/alex/facultate/anul3/apd/tema2-apd/checker/tests/test1/" + inputFileName);
     if (!inputFile.is_open()) {
         cerr << "File opening error\n";
         return -1;
@@ -18,7 +21,7 @@ int clients::Client::parseInput() {
         inputFile >> file->name;
         inputFile >> file->segmentCount;
 
-        for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex) {
+        for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex++) {
             inputFile >> file->segments[segmentIndex];
         }
 
@@ -40,8 +43,36 @@ int clients::Client::parseInput() {
         this->addDesiredFile(desiredFileName);
     }
 
+    // Debug
+    cout << "[CLIENT " << id << "] parsed " << this->ownedFileCount << " owned files and " << this->desiredFileCount << " desired files\n";
+
     // Close input file
     inputFile.close();
+
+    return 0;
+}
+
+int clients::Client::sendInputToTracker() {
+    // Send how many files the client has
+    MPI_Send(&this->ownedFileCount, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+
+    // Send owned files
+    for (auto& file: this->ownedFiles) {
+        // Send file name
+        MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+
+        // Send segment count
+        MPI_Send(&file->segmentCount, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+
+        // Send segments
+        for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex++) {
+            // Extract segment and size
+            string segment = file->segments[segmentIndex];
+
+            // Send segment
+            MPI_Send(segment.c_str(), SEGMENT_SIZE, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+        }
+    }
 
     return 0;
 }

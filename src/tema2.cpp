@@ -5,16 +5,10 @@
 
 #include "client/client.h"
 #include "tracker/tracker.h"
-#include "file.h"
+#include "common.h"
 
 using namespace clients;
 using namespace trackers;
-
-#define TRACKER_RANK 0
-#define MAX_FILES 10
-#define MAX_FILENAME 15
-#define HASH_SIZE 32
-#define MAX_CHUNKS 100
 
 void *download_thread_func(void *arg)
 {
@@ -41,6 +35,8 @@ void tracker(int numtasks, int rank) {
 void peer(int numtasks, int rank) {
     pthread_t download_thread;
     pthread_t upload_thread;
+
+    MPI_Status mpiStatus;
     void *status;
     int r;
 
@@ -49,6 +45,16 @@ void peer(int numtasks, int rank) {
 
     // Start parsing input file
     client->parseInput();
+
+    // Send input to tracker
+    client->sendInputToTracker();
+
+    // Await tracker confirmation
+    char reply[4];
+
+    MPI_Bcast(reply, 4, MPI_CHAR, TRACKER_RANK, MPI_COMM_WORLD);
+
+    cout << "[CLIENT " << rank << "] received " << reply << " from TRACKER.\n";
 
     r = pthread_create(&download_thread, NULL, download_thread_func, (void *) &rank);
     if (r) {

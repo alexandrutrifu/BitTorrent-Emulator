@@ -5,4 +5,4 @@ run:
 	mpirun -np 4 ./tema2
 
 clean:
-	rm -rf tema3
+	rm -rf tema2
