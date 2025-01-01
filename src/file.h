@@ -29,8 +29,11 @@ class File {
 
         string name;
         int segmentCount;
+        int segmentsLacked = 0;
         FileStatus status = INCOMPLETE;
 
         unordered_map<int, string> segments;    // (segmentIndex, segmentHash)
+
+        int seedCount = 0;
         int *seeds;
 };

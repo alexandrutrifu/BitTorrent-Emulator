@@ -29,24 +29,7 @@ void *download_thread_func(void *arg)
         return NULL;
     }
 
-    // Request seeds for desired files
-    for (File *file: client->getDesiredFiles()) {
-        file->seeds = client->requestSeeds(file);
-
-        // Create new empty entry in owned files
-        client->addOwnedFile(file);
-    }
-
-    int pendingDownloads = client->getDesiredFiles().size();
-    File *currentDownload = client->getDesiredFiles()[0];
-
-    while (pendingDownloads) {
-        // Query file swarm for missing segments
-        // TODO
-
-        // Every 10 segments, update list of file seeds
-        // TODO
-    }
+    client->download();
 
     return NULL;
 }

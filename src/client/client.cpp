@@ -1,6 +1,57 @@
 #include "client.h"
 
-int clients::Client::parseInput() {
+void clients::Client::download() {
+    // Request seeds for desired files
+    this->requestSeeds();
+
+    int pendingDownloads = this->getDesiredFiles().size();
+    int fileIndex = 0;
+    int segmentsReceived = 0;
+    File *currentDownload = this->getDesiredFiles()[0];
+
+    while (pendingDownloads) {
+        // Request segment from seeds
+        int segmentIndex = this->nextDesiredSegment(currentDownload);
+
+        // Query file swarm for missing segments
+        for (int i = 0; i < currentDownload->seedCount; i++) {
+            int seed = currentDownload->seeds[i];
+
+            // Send request for segment
+            // TODO
+
+            // Receive reply - either segment or decline
+            // TODO
+
+            // If segment received, update file
+            segmentsReceived++;
+
+            // Every 10 segments, update list of file seeds
+            if (segmentsReceived == 10) {
+                this->requestSeeds();
+                segmentsReceived = 0;
+            }
+
+            if (currentDownload->segmentsLacked == 0) {
+                pendingDownloads--;
+                
+                if (pendingDownloads == 0) {
+                    break;
+                }
+
+                currentDownload = this->getDesiredFiles()[++fileIndex];
+                continue;
+            }
+
+            break;
+
+            // Otherwise, continue requesting segments
+        }
+    }
+}
+
+int clients::Client::parseInput()
+{
     string inputFileName = "in" + to_string(id) + ".txt";
 
     // Debug
@@ -39,8 +90,12 @@ int clients::Client::parseInput() {
 
         inputFile >> desiredFileName;
 
+        File *file = new File(desiredFileName);
+
+        file->segmentsLacked = file->segmentCount;
+
         // Add to desired files
-        this->addDesiredFile(new File(desiredFileName));
+        this->addDesiredFile(file);
     }
 
     // Debug
@@ -77,7 +132,13 @@ int clients::Client::sendInputToTracker() {
     return 0;
 }
 
-int *clients::Client::requestSeeds(File *file) {
+void clients::Client::requestSeeds() {
+    for (File *file: this->desiredFiles) {
+        file->seeds = getFileSeeds(file);
+    }
+}
+
+int *clients::Client::getFileSeeds(File *file) {
     MPI_Status status;
 
     // Send request for seeds
@@ -100,9 +161,19 @@ int *clients::Client::requestSeeds(File *file) {
 
     MPI_Recv(&seedCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
 
+    file->seedCount = seedCount;
+
     int *seeds = new int[seedCount];
 
     MPI_Recv(seeds, seedCount, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
 
     return seeds;
+}
+
+int clients::Client::nextDesiredSegment(File *file) {
+    for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex++) {
+        if (file->segments.find(segmentIndex) == file->segments.end()) {
+            return segmentIndex;
+        }
+    }
 }

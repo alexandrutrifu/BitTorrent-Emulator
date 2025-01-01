@@ -20,9 +20,13 @@ namespace clients {
         Client(int rank) { id = rank; }
         ~Client() = default;
 
+        void download();
+
         int parseInput();
         int sendInputToTracker();
-        int *requestSeeds(File *file);
+        void requestSeeds();
+        int *getFileSeeds(File *file);
+        int nextDesiredSegment(File *file);
 
         vector<File *> getOwnedFiles() { return ownedFiles; }
         vector<File *> getDesiredFiles() { return desiredFiles; }
