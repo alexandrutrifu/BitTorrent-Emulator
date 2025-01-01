@@ -62,7 +62,7 @@ int clients::Client::sendInputToTracker() {
         MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, 0, 0, MPI_COMM_WORLD);
 
         // Send segment count
-        MPI_Send(&file->segmentCount, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+        MPI_Send(&file->segmentCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
 
         // Send segments
         for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex++) {
@@ -70,9 +70,21 @@ int clients::Client::sendInputToTracker() {
             string segment = file->segments[segmentIndex];
 
             // Send segment
-            MPI_Send(segment.c_str(), SEGMENT_SIZE, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+            MPI_Send(segment.c_str(), SEGMENT_SIZE, MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD);
         }
     }
+
+    return 0;
+}
+
+int clients::Client::requestSeeds(File *file) {
+    // Send request for seeds
+    int request = requestIndex(REQUEST_SEEDS);
+
+    MPI_Send(&request, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+
+    // Send file name
+    MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD);
 
     return 0;
 }

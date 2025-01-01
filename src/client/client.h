@@ -22,6 +22,7 @@ namespace clients {
 
         int parseInput();
         int sendInputToTracker();
+        int requestSeeds(File *file);
 
         vector<File *> getOwnedFiles() { return ownedFiles; }
         vector<string> getDesiredFiles() { return desiredFiles; }
