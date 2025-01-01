@@ -40,7 +40,7 @@ int clients::Client::parseInput() {
         inputFile >> desiredFileName;
 
         // Add to desired files
-        this->addDesiredFile(desiredFileName);
+        this->addDesiredFile(new File(desiredFileName));
     }
 
     // Debug
@@ -77,7 +77,9 @@ int clients::Client::sendInputToTracker() {
     return 0;
 }
 
-int clients::Client::requestSeeds(File *file) {
+int *clients::Client::requestSeeds(File *file) {
+    MPI_Status status;
+
     // Send request for seeds
     int request = requestIndex(REQUEST_SEEDS);
 
@@ -86,5 +88,21 @@ int clients::Client::requestSeeds(File *file) {
     // Send file name
     MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD);
 
-    return 0;
+    // Receive segment count
+    int segmentCount;
+
+    MPI_Recv(&segmentCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+
+    file->segmentCount = segmentCount;
+
+    // Receive seeds
+    int seedCount;
+
+    MPI_Recv(&seedCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+
+    int *seeds = new int[seedCount];
+
+    MPI_Recv(seeds, seedCount, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+
+    return seeds;
 }

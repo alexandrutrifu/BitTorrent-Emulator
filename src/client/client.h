@@ -22,12 +22,12 @@ namespace clients {
 
         int parseInput();
         int sendInputToTracker();
-        int requestSeeds(File *file);
+        int *requestSeeds(File *file);
 
         vector<File *> getOwnedFiles() { return ownedFiles; }
-        vector<string> getDesiredFiles() { return desiredFiles; }
+        vector<File *> getDesiredFiles() { return desiredFiles; }
         void addOwnedFile(File *file) { ownedFiles.push_back(file); }
-        void addDesiredFile(string name) { desiredFiles.push_back(name); }
+        void addDesiredFile(File *file) { desiredFiles.push_back(file); }
 
         int id;
         int ownedFileCount;
@@ -35,6 +35,6 @@ namespace clients {
 
     private:
         vector<File *> ownedFiles;
-        vector<string> desiredFiles;
+        vector<File *> desiredFiles;
     };
 }

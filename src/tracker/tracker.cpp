@@ -139,16 +139,21 @@ void trackers::Tracker::handleUpdateSwarm(int clientIndex, string fileName) {
     File *file = new File(fileName);
     unordered_set<int> swarm = this->swarms[file];
 
+    int swarmSize = swarm.size();
+
     // Get (int *) array associated with set
-    int *clientArray = new int[swarm.size()];
+    int *clientArray = new int[swarmSize];
 
     int index = 0;
     for (int client: swarm) {
         clientArray[index++] = client;
     }
 
+    // Send swarm size
+    MPI_Send(&swarmSize, 1, MPI_INT, clientIndex, 0, MPI_COMM_WORLD);
+
     // Send seeds to client
-    MPI_Send(clientArray, swarm.size(), MPI_INT, clientIndex, 0, MPI_COMM_WORLD);
+    MPI_Send(clientArray, swarmSize, MPI_INT, clientIndex, 0, MPI_COMM_WORLD);
 }
 
 void trackers::Tracker::handleDownloadComplete(int clientIndex) {

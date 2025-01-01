@@ -32,4 +32,5 @@ class File {
         FileStatus status = INCOMPLETE;
 
         unordered_map<int, string> segments;    // (segmentIndex, segmentHash)
+        int *seeds;
 };

@@ -14,21 +14,33 @@ void *download_thread_func(void *arg)
 {
     Client *client = (Client *) arg;
 
-    // Request seeds for desired files
-    for (auto& fileName: client->getDesiredFiles()) {
-        client->requestSeeds(new File(fileName));
+    if (client->getDesiredFiles().empty()) {
+        // Send finished signal to tracker
+        int finished = requestIndex(ClientRequest::FINISHED);
 
-        // Create new empty entry in owned files
-        client->addOwnedFile(new File(fileName));
+        MPI_Send(&finished, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
 
-        // Receive number of segments required
-        // TODO
+        // Await confirmation
+        char reply[4];
+        MPI_Status status;
 
-        // Receive file seeds
-        // TODO
+        MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+
+        return NULL;
     }
 
-    while (true) {
+    // Request seeds for desired files
+    for (File *file: client->getDesiredFiles()) {
+        file->seeds = client->requestSeeds(file);
+
+        // Create new empty entry in owned files
+        client->addOwnedFile(file);
+    }
+
+    int pendingDownloads = client->getDesiredFiles().size();
+    File *currentDownload = client->getDesiredFiles()[0];
+
+    while (pendingDownloads) {
         // Query file swarm for missing segments
         // TODO
 
