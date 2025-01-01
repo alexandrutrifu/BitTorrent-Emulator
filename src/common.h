@@ -6,11 +6,17 @@
 
 #define SEGMENT_SIZE 33
 
-enum ClientRequest {
+enum TrackerRequest {
     REQUEST_SEEDS,
     DOWNLOAD_COMPLETE,
     FINISHED,
     UPDATE_SWARM
+};
+
+enum ClientRequest {
+    REQUEST_SEGMENT,
+    DECLINED,
+    ACCEPTED
 };
 
 enum ClientStatus {
@@ -18,7 +24,7 @@ enum ClientStatus {
     DONE
 };
 
-int requestIndex(ClientRequest request) {
+int trackerRequestIndex(TrackerRequest request) {
     switch (request) {
         case REQUEST_SEEDS:
             return 0;
@@ -33,17 +39,43 @@ int requestIndex(ClientRequest request) {
     }
 }
 
-ClientRequest indexToRequest(int index) {
+TrackerRequest indexToTrackerRequest(int index) {
     switch (index) {
         case 0:
-            return ClientRequest::REQUEST_SEEDS;
+            return TrackerRequest::REQUEST_SEEDS;
         case 1:
-            return ClientRequest::DOWNLOAD_COMPLETE;
+            return TrackerRequest::DOWNLOAD_COMPLETE;
         case 2:
-            return ClientRequest::FINISHED;
+            return TrackerRequest::FINISHED;
         case 3:
-            return ClientRequest::UPDATE_SWARM;
+            return TrackerRequest::UPDATE_SWARM;
         default:
-            return ClientRequest::REQUEST_SEEDS;
+            return TrackerRequest::REQUEST_SEEDS;
+    }
+}
+
+int clientRequestIndex(ClientRequest request) {
+    switch (request) {
+        case REQUEST_SEGMENT:
+            return 0;
+        case DECLINED:
+            return 1;
+        case ACCEPTED:
+            return 2;
+        default:
+            return -1;
+    }
+}
+
+ClientRequest indexToClientRequest(int index) {
+    switch (index) {
+        case 0:
+            return ClientRequest::REQUEST_SEGMENT;
+        case 1:
+            return ClientRequest::DECLINED;
+        case 2:
+            return ClientRequest::ACCEPTED;
+        default:
+            return ClientRequest::REQUEST_SEGMENT;
     }
 }
