@@ -12,14 +12,36 @@ using namespace trackers;
 
 void *download_thread_func(void *arg)
 {
-    int rank = *(int*) arg;
+    Client *client = (Client *) arg;
+
+    // Request seeds for desired files
+    for (auto& fileName: client->getDesiredFiles()) {
+        client->requestSeeds(new File(fileName));
+
+        // Create new empty entry in owned files
+        client->addOwnedFile(new File(fileName));
+
+        // Receive number of segments required
+        // TODO
+
+        // Receive file seeds
+        // TODO
+    }
+
+    while (true) {
+        // Query file swarm for missing segments
+        // TODO
+
+        // Every 10 segments, update list of file seeds
+        // TODO
+    }
 
     return NULL;
 }
 
 void *upload_thread_func(void *arg)
 {
-    int rank = *(int*) arg;
+    Client *client = (Client *) arg;
 
     return NULL;
 }
@@ -30,6 +52,12 @@ void tracker(int numtasks, int rank) {
 
     // Wait for clients to send their lists of files
     tracker->awaitClientInput();
+
+    // Handle requests
+    tracker->handleRequests();
+
+    // Debug
+    cout << "[TRACKER] all clients are done\n";
 }
 
 void peer(int numtasks, int rank) {
@@ -56,13 +84,13 @@ void peer(int numtasks, int rank) {
 
     cout << "[CLIENT " << rank << "] received " << reply << " from TRACKER.\n";
 
-    r = pthread_create(&download_thread, NULL, download_thread_func, (void *) &rank);
+    r = pthread_create(&download_thread, NULL, download_thread_func, (void *) client);
     if (r) {
         printf("Eroare la crearea thread-ului de download\n");
         exit(-1);
     }
 
-    r = pthread_create(&upload_thread, NULL, upload_thread_func, (void *) &rank);
+    r = pthread_create(&upload_thread, NULL, upload_thread_func, (void *) client);
     if (r) {
         printf("Eroare la crearea thread-ului de upload\n");
         exit(-1);
