@@ -21,6 +21,8 @@ namespace clients {
         ~Client() = default;
 
         void download();
+        int querySwarm(File *file, int segmentIndex);
+        void updateFile(File *file, int segmentIndex, int seed);
 
         int parseInput();
         int sendInputToTracker();

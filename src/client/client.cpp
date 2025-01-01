@@ -13,41 +13,90 @@ void clients::Client::download() {
         // Request segment from seeds
         int segmentIndex = this->nextDesiredSegment(currentDownload);
 
-        // Query file swarm for missing segments
-        for (int i = 0; i < currentDownload->seedCount; i++) {
-            int seed = currentDownload->seeds[i];
+        int ret = this->querySwarm(currentDownload, segmentIndex);
 
-            // Send request for segment
-            // TODO
+        if (ret == -1) {    // Error
+            cerr << "Error querying swarm\n";
+            return;
+        }
 
-            // Receive reply - either segment or decline
-            // TODO
+        if (ret == -2) { // No seeds available
+            continue;
+        }
 
-            // If segment received, update file
-            segmentsReceived++;
-
-            // Every 10 segments, update list of file seeds
-            if (segmentsReceived == 10) {
-                this->requestSeeds();
-                segmentsReceived = 0;
+        // Move to next segment/file
+        if (currentDownload->segmentsLacked == 0) {
+            pendingDownloads--;
+            
+            if (pendingDownloads == 0) {
+                break;
             }
 
-            if (currentDownload->segmentsLacked == 0) {
-                pendingDownloads--;
-                
-                if (pendingDownloads == 0) {
-                    break;
-                }
+            currentDownload = this->getDesiredFiles()[++fileIndex];
+            continue;
+        }
 
-                currentDownload = this->getDesiredFiles()[++fileIndex];
-                continue;
-            }
+        // Every 10 segments, update list of file seeds
+        segmentsReceived++;
 
-            break;
-
-            // Otherwise, continue requesting segments
+        if (segmentsReceived == 10) {
+            this->requestSeeds();
+            segmentsReceived = 0;
         }
     }
+}
+
+int clients::Client::querySwarm(File *file, int segmentIndex) {
+    for (int i = 0; i < file->seedCount; i++) {
+        int seed = file->seeds[i];
+
+        // Ignore self (we are peers for others)
+        if (seed == this->id) {
+            continue;
+        }
+
+        // Send request for segment
+        int request = clientRequestIndex(REQUEST_SEGMENT);
+
+        MPI_Send(&request, 1, MPI_INT, seed, 0, MPI_COMM_WORLD);
+
+        // Send file name & segment index
+        MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, seed, 0, MPI_COMM_WORLD);
+        MPI_Send(&segmentIndex, 1, MPI_INT, seed, 0, MPI_COMM_WORLD);
+
+        // Receive reply
+        int reply;
+        MPI_Status status;
+
+        MPI_Recv(&reply, 1, MPI_INT, seed, 0, MPI_COMM_WORLD, &status);
+
+        // Parse reply
+        ClientRequest clientRequest = indexToClientRequest(reply);
+
+        switch (clientRequest) {
+            case DECLINED:
+                continue;
+            case ACCEPTED:
+                this->updateFile(file, segmentIndex, seed);
+                return 0;
+            default:
+                return -1;
+        }
+    }
+
+    return -2;
+}
+
+void clients::Client::updateFile(File *file, int segmentIndex, int seed) {
+    // Receive segment
+    char segment[SEGMENT_SIZE];
+    MPI_Status status;
+
+    MPI_Recv(segment, SEGMENT_SIZE, MPI_CHAR, seed, 0, MPI_COMM_WORLD, &status);
+
+    // Update file
+    file->segments[segmentIndex] = segment;
+    file->segmentsLacked--;
 }
 
 int clients::Client::parseInput()
@@ -142,7 +191,7 @@ int *clients::Client::getFileSeeds(File *file) {
     MPI_Status status;
 
     // Send request for seeds
-    int request = requestIndex(REQUEST_SEEDS);
+    int request = trackerRequestIndex(REQUEST_SEEDS);
 
     MPI_Send(&request, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
 
