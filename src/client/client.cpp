@@ -1,6 +1,6 @@
 #include "client.h"
 
-int client::Client::parseInput() {
+int clients::Client::parseInput() {
     string inputFileName = "in" + to_string(id) + ".txt";
     
     ifstream inputFile(inputFileName);
@@ -21,6 +21,8 @@ int client::Client::parseInput() {
         for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex) {
             inputFile >> file->segments[segmentIndex];
         }
+
+        file->completeStatus();
 
         // Add file to client structure
         this->addOwnedFile(file);
