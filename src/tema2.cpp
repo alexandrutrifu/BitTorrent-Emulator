@@ -16,7 +16,7 @@ void *download_thread_func(void *arg)
 
     if (client->getDesiredFiles().empty()) {
         // Send finished signal to tracker
-        int finished = requestIndex(ClientRequest::FINISHED);
+        int finished = trackerRequestIndex(TrackerRequest::FINISHED);
 
         MPI_Send(&finished, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
 
