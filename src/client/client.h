@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <random>
 
 #include <unordered_map>
 #include <vector>
@@ -20,10 +21,19 @@ namespace clients {
         Client(int rank) { id = rank; }
         ~Client() = default;
 
+        // Download methods
         void download();
         int querySwarm(File *file, int segmentIndex);
         void updateFile(File *file, int segmentIndex, int seed);
 
+        // Upload methods
+        void upload();
+
+        // Tracker communication
+        void sendDownloadCompleteSignal();
+        void sendFinishedSignal();
+
+        // File management
         int parseInput();
         int sendInputToTracker();
         void requestSeeds();
