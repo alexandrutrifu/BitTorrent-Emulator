@@ -5,7 +5,6 @@
 
 #include "client/client.h"
 #include "tracker/tracker.h"
-#include "common.h"
 
 using namespace clients;
 using namespace trackers;
@@ -18,13 +17,25 @@ void *download_thread_func(void *arg)
         // Send finished signal to tracker
         int finished = trackerRequestIndex(TrackerRequest::FINISHED);
 
-        MPI_Send(&finished, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
+        // Log buffer size
+        printf("Sending finished signal with buffer size: %lu\\n", sizeof(finished));
+        MPI_Send(&finished, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);    
 
         // Await confirmation
         char reply[4];
         MPI_Status status;
+        int count;
 
-        MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+        // Probe for the incoming message
+        MPI_Probe(TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
+        MPI_Get_count(&status, MPI_CHAR, &count);
+        printf("Receiving reply with expected buffer size: 4, actual size: %d\\n", count);
+
+        if (count > 4) {
+            fprintf(stderr, "Warning: Incoming message size %d exceeds buffer size 4\\n", count);
+        }
+
+        MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
 
         return NULL;
     }
@@ -60,15 +71,17 @@ void tracker(int numtasks, int rank) {
     // Handle requests
     tracker->handleRequests();
 
-    // Debug
-    tracker->trackerLog << "[TRACKER] all clients are done\n";
+    // Log
+    tracker->trackerLog << "[TRACKER] all clients are done\n" << std::flush;
+
+    // Close log file
+    tracker->trackerLog.close();
 }
 
 void peer(int numtasks, int rank) {
     pthread_t download_thread;
     pthread_t upload_thread;
 
-    MPI_Status mpiStatus;
     void *status;
     int r;
 
@@ -76,11 +89,14 @@ void peer(int numtasks, int rank) {
     Client *client = new Client(rank);
 
     // Open log file
-    client->clientLog.open("download.log");
+    client->clientLog.open("client" + to_string(rank) + ".log");
     if (!client->clientLog.is_open()) {
         cout << "Error opening log file\n";
         exit(-1);
     }
+
+    // Test log
+    client->clientLog << "[CLIENT " << rank << "] opened log file\n" << std::flush;
 
     // Start parsing input file
     client->parseInput();
@@ -93,7 +109,7 @@ void peer(int numtasks, int rank) {
 
     MPI_Bcast(reply, 4, MPI_CHAR, TRACKER_RANK, MPI_COMM_WORLD);
 
-    client->clientLog << "[CLIENT " << rank << "] received " << reply << " from TRACKER.\n";
+    client->clientLog << "[CLIENT " << rank << "] received " << reply << " from TRACKER.\n" << std::flush;
 
     r = pthread_create(&download_thread, NULL, download_thread_func, (void *) client);
     if (r) {
@@ -118,6 +134,9 @@ void peer(int numtasks, int rank) {
         printf("Eroare la asteptarea thread-ului de upload\n");
         exit(-1);
     }
+
+    // Close log file
+    client->clientLog.close();
 }
  
 int main (int argc, char *argv[]) {
@@ -131,6 +150,7 @@ int main (int argc, char *argv[]) {
     }
     MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_set_errhandler(MPI_COMM_WORLD, MPI_ERRORS_ARE_FATAL);
 
     if (rank == TRACKER_RANK) {
         tracker(numtasks, rank);

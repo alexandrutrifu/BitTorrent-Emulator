@@ -1,8 +1,8 @@
 #include "client.h"
 
 void clients::Client::download() {
-    // Debug
-    this->clientLog << "[CLIENT " << this->id << "] starting download\n";
+    // Log
+    this->clientLog << "[CLIENT " << this->id << "] starting download\n" << std::flush;
 
     // Request seeds for desired files
     this->requestSeeds();
@@ -12,34 +12,53 @@ void clients::Client::download() {
     int segmentsReceived = 0;
     File *currentDownload = this->getDesiredFiles()[0];
 
+    // Log
+    this->clientLog << "[CLIENT " << this->id << "] File " << currentDownload->name << " has following seeds: ";
+
+    for (int i = 0; i < currentDownload->seedCount; i++) {
+        this->clientLog << currentDownload->seeds[i] << " ";
+    }
+
+    this->clientLog << '\n' << std::flush;
+
     while (pendingDownloads) {
         // Request segment from seeds
         int segmentIndex = this->nextDesiredSegment(currentDownload);
 
-        // Debug
-        this->clientLog << "[CLIENT " << this->id << "] requesting segment " << segmentIndex << " from " << currentDownload->name << '\n';
+        // Log
+        this->clientLog << "[CLIENT " << this->id << "] requesting segment " << segmentIndex << " from " << currentDownload->name << '\n' << std::flush;
 
         int ret = this->querySwarm(currentDownload, segmentIndex);
 
         if (ret == -1) {    // Error
-            cerr << "Error querying swarm\n";
+            cerr << "Client " << this->id << " encountered an error while downloading\n";
             return;
         }
 
-        // Debug
-        this->clientLog << "[CLIENT " << this->id << "] needs " << currentDownload->segmentsLacked << " more segments from " << currentDownload->name << '\n';
+        // Log
+        this->clientLog << "[CLIENT " << this->id << "] needs " << currentDownload->segmentsLacked << " more segments from " << currentDownload->name << '\n' << std::flush;
 
         // Move to next segment/file
         if (currentDownload->segmentsLacked == 0) {
             pendingDownloads--;
 
+            // Log
+            this->clientLog << "[CLIENT " << this->id << "] finished downloading " << currentDownload->name << '\n' << std::flush;
+
             this->sendDownloadCompleteSignal();
+
+            // Write hashes to client output file
+            saveHashes(currentDownload);
             
             if (pendingDownloads == 0) {
                 break;
             }
 
             currentDownload = this->getDesiredFiles()[++fileIndex];
+
+            // Log
+            this->clientLog << "[CLIENT " << this->id << "] starting download of " << currentDownload->name << '\n' << std::flush;
+
             continue;
         }
 
@@ -47,6 +66,9 @@ void clients::Client::download() {
         segmentsReceived++;
 
         if (segmentsReceived == 10) {
+            // Log
+            this->clientLog << "[CLIENT " << this->id << "] updating seeds\n" << std::flush;
+            
             this->requestSeeds();
             segmentsReceived = 0;
         }
@@ -65,29 +87,35 @@ int clients::Client::querySwarm(File *file, int segmentIndex) {
             continue;
         }
 
-        // Debug
-        this->clientLog << "[CLIENT " << this->id << "] querying seed " << seed << '\n';
+        // Log
+        this->clientLog << "[DOWNLOAD CLIENT " << this->id << "] querying seed " << seed << '\n' << std::flush;
 
         // Send request for segment
         int request = clientRequestIndex(REQUEST_SEGMENT);
 
-        MPI_Send(&request, 1, MPI_INT, seed, 0, MPI_COMM_WORLD);
+        // Log buffer size
+        MPI_Send(&request, 1, MPI_INT, seed, UPLOAD_TAG, MPI_COMM_WORLD);
 
-        // Send file name & segment index
-        MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, seed, 0, MPI_COMM_WORLD);
-        MPI_Send(&segmentIndex, 1, MPI_INT, seed, 0, MPI_COMM_WORLD);
+        int fileSize = file->name.size() + 1;
+        char fileName[fileSize];
+        strcpy(fileName, file->name.c_str());
+
+        // Send file size, name & segment index
+        MPI_Send(&fileSize, 1, MPI_INT, seed, UPLOAD_TAG, MPI_COMM_WORLD);
+        MPI_Send(fileName, fileSize, MPI_CHAR, seed, UPLOAD_TAG, MPI_COMM_WORLD);
+        MPI_Send(&segmentIndex, 1, MPI_INT, seed, UPLOAD_TAG, MPI_COMM_WORLD);
 
         // Receive reply
         int reply;
         MPI_Status status;
 
-        MPI_Recv(&reply, 1, MPI_INT, seed, 0, MPI_COMM_WORLD, &status);
+        MPI_Recv(&reply, 1, MPI_INT, seed, DOWNLOAD_TAG, MPI_COMM_WORLD, &status);
 
         // Parse reply
         ClientRequest clientRequest = indexToClientRequest(reply);
 
-        // Debug
-        this->clientLog << "[CLIENT " << this->id << "] received reply " << clientRequest << " from seed " << seed << '\n';
+        // Log
+        this->clientLog << "[DOWNLOAD CLIENT " << this->id << "] received reply " << clientRequest << " from seed " << seed << '\n' << std::flush;
 
         switch (clientRequest) {
             case DECLINED:
@@ -103,6 +131,7 @@ int clients::Client::querySwarm(File *file, int segmentIndex) {
 
 void clients::Client::requestSeeds() {
     for (File *file: this->desiredFiles) {
+        this->clientLog << "[DOWNLOAD CLIENT " << this->id << "] requesting seeds for " << file->name << '\n' << std::flush;
         file->seeds = getFileSeeds(file);
     }
 }
@@ -113,28 +142,40 @@ int *clients::Client::getFileSeeds(File *file) {
     // Send request for seeds
     int request = trackerRequestIndex(REQUEST_SEEDS);
 
-    MPI_Send(&request, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+    MPI_Send(&request, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
 
-    // Send file name
-    MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD);
+    // Send file size and name
+    int fileSize = file->name.size() + 1;
+    char fileName[fileSize];
+
+    strcpy(fileName, file->name.c_str());
+
+    MPI_Send(&fileSize, 1, MPI_INT, TRACKER_RANK, SEED_REQUEST_TAG, MPI_COMM_WORLD);
+    MPI_Send(fileName, fileSize, MPI_CHAR, TRACKER_RANK, SEED_REQUEST_TAG, MPI_COMM_WORLD);
 
     // Receive segment count
-    int segmentCount;
+    int segmentCount = 0;
 
-    MPI_Recv(&segmentCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(&segmentCount, 1, MPI_INT, TRACKER_RANK, SEED_REQUEST_TAG, MPI_COMM_WORLD, &status);
 
-    file->segmentCount = segmentCount;
+    if (file->segmentCount == 0) {
+        file->segmentCount = segmentCount;
+        file->segmentsLacked = segmentCount;
+    }
+
+    // Log
+    this->clientLog << "[DOWNLOAD CLIENT " << this->id << "] received " << segmentCount << " segments for " << file->name << '\n' << std::flush;
 
     // Receive seeds
     int seedCount;
 
-    MPI_Recv(&seedCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(&seedCount, 1, MPI_INT, TRACKER_RANK, SEED_REQUEST_TAG, MPI_COMM_WORLD, &status);
 
     file->seedCount = seedCount;
 
     int *seeds = new int[seedCount];
 
-    MPI_Recv(seeds, seedCount, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(seeds, seedCount, MPI_INT, TRACKER_RANK, SEED_REQUEST_TAG, MPI_COMM_WORLD, &status);
 
     return seeds;
 }
@@ -145,4 +186,5 @@ int clients::Client::nextDesiredSegment(File *file) {
             return segmentIndex;
         }
     }
+    return 0;
 }

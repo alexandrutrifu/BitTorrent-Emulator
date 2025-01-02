@@ -40,6 +40,10 @@ namespace clients {
         int *getFileSeeds(File *file);
         int nextDesiredSegment(File *file);
 
+        // Output methods
+        void saveHashes(File *file);
+
+        // Getters & setters
         vector<File *> getOwnedFiles() { return ownedFiles; }
         vector<File *> getDesiredFiles() { return desiredFiles; }
         void addOwnedFile(File *file) { ownedFiles.push_back(file); }

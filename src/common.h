@@ -1,3 +1,5 @@
+#pragma once
+
 #define TRACKER_RANK 0
 #define MAX_FILES 10
 #define MAX_FILENAME 15
@@ -5,6 +7,11 @@
 #define MAX_CHUNKS 100
 
 #define SEGMENT_SIZE 33
+
+enum FileStatus {
+    INCOMPLETE,
+    COMPLETE
+};
 
 enum TrackerRequest {
     REQUEST_SEEDS,
@@ -25,7 +32,14 @@ enum ClientStatus {
     DONE
 };
 
-int trackerRequestIndex(TrackerRequest request) {
+enum Tag {
+    COMMUNICATION_TAG,
+    UPLOAD_TAG,
+    DOWNLOAD_TAG,
+    SEED_REQUEST_TAG
+};
+
+inline int trackerRequestIndex(TrackerRequest request) {
     switch (request) {
         case REQUEST_SEEDS:
             return 0;
@@ -40,7 +54,7 @@ int trackerRequestIndex(TrackerRequest request) {
     }
 }
 
-TrackerRequest indexToTrackerRequest(int index) {
+inline TrackerRequest indexToTrackerRequest(int index) {
     switch (index) {
         case 0:
             return TrackerRequest::REQUEST_SEEDS;
@@ -55,7 +69,7 @@ TrackerRequest indexToTrackerRequest(int index) {
     }
 }
 
-int clientRequestIndex(ClientRequest request) {
+inline int clientRequestIndex(ClientRequest request) {
     switch (request) {
         case REQUEST_SEGMENT:
             return 0;
@@ -70,7 +84,7 @@ int clientRequestIndex(ClientRequest request) {
     }
 }
 
-ClientRequest indexToClientRequest(int index) {
+inline ClientRequest indexToClientRequest(int index) {
     switch (index) {
         case 0:
             return ClientRequest::REQUEST_SEGMENT;

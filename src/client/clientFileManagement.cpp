@@ -5,7 +5,7 @@ void clients::Client::updateFile(File *file, int segmentIndex, int seed) {
     char segment[SEGMENT_SIZE];
     MPI_Status status;
 
-    MPI_Recv(segment, SEGMENT_SIZE, MPI_CHAR, seed, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(segment, SEGMENT_SIZE, MPI_CHAR, seed, DOWNLOAD_TAG, MPI_COMM_WORLD, &status);
 
     // Update file
     file->segments[segmentIndex] = segment;
@@ -16,10 +16,10 @@ int clients::Client::parseInput()
 {
     string inputFileName = "in" + to_string(id) + ".txt";
 
-    // Debug
-    this->clientLog << "[CLIENT " << id << "] parsing input file " << inputFileName << "\n";
+    // Log
+    this->clientLog << "[CLIENT " << id << "] parsing input file " << inputFileName << "\n" << std::flush;
     
-    ifstream inputFile("/Users/alex/facultate/anul3/apd/tema2-apd/checker/tests/test1/" + inputFileName);
+    ifstream inputFile(inputFileName);
     if (!inputFile.is_open()) {
         cerr << "File opening error\n";
         return -1;
@@ -54,14 +54,13 @@ int clients::Client::parseInput()
 
         File *file = new File(desiredFileName);
 
-        file->segmentsLacked = file->segmentCount;
-
-        // Add to desired files
+        // Add to desired files & owned files (no segments yet)
         this->addDesiredFile(file);
+        this->addOwnedFile(file);
     }
 
-    // Debug
-    this->clientLog << "[CLIENT " << id << "] parsed " << this->ownedFileCount << " owned files and " << this->desiredFileCount << " desired files\n";
+    // Log
+    this->clientLog << "[CLIENT " << id << "] parsed " << this->ownedFileCount << " owned files and " << this->desiredFileCount << " desired files\n" << std::flush;
 
     // Close input file
     inputFile.close();
@@ -71,15 +70,27 @@ int clients::Client::parseInput()
 
 int clients::Client::sendInputToTracker() {
     // Send how many files the client has
-    MPI_Send(&this->ownedFileCount, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
+    MPI_Send(&this->ownedFileCount, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
 
     // Send owned files
     for (auto& file: this->ownedFiles) {
+        if (file->status == INCOMPLETE) {
+            continue;
+        }
+
+        // Send file size
+        int fileSize = file->name.size() + 1;
+        char fileName[fileSize];
+
+        strcpy(fileName, file->name.c_str());
+
+        MPI_Send(&fileSize, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
+
         // Send file name
-        MPI_Send(file->name.c_str(), file->name.size(), MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+        MPI_Send(fileName, fileSize, MPI_CHAR, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
 
         // Send segment count
-        MPI_Send(&file->segmentCount, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
+        MPI_Send(&file->segmentCount, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
 
         // Send segments
         for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex++) {
@@ -87,7 +98,7 @@ int clients::Client::sendInputToTracker() {
             string segment = file->segments[segmentIndex];
 
             // Send segment
-            MPI_Send(segment.c_str(), SEGMENT_SIZE, MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD);
+            MPI_Send(segment.c_str(), SEGMENT_SIZE, MPI_CHAR, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
         }
     }
 
@@ -97,23 +108,41 @@ int clients::Client::sendInputToTracker() {
 void clients::Client::sendDownloadCompleteSignal() {
     int request = trackerRequestIndex(DOWNLOAD_COMPLETE);
 
-    MPI_Send(&request, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
+    MPI_Send(&request, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
 
     // Await confirmation
     char reply[4];
     MPI_Status status;
 
-    MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
 }
 
 void clients::Client::sendFinishedSignal() {
     int request = trackerRequestIndex(FINISHED);
 
-    MPI_Send(&request, 1, MPI_INT, TRACKER_RANK, 0, MPI_COMM_WORLD);
+    MPI_Send(&request, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);
 
     // Await confirmation
     char reply[4];
     MPI_Status status;
 
-    MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
+}
+
+void clients::Client::saveHashes(File *file) {
+    ofstream outputFile("client" + to_string(id) + "_" + file->name);
+    if (!outputFile.is_open()) {
+        cerr << "File opening error\n";
+        return;
+    }
+
+    for (int segmentIndex = 0; segmentIndex < file->segmentCount; segmentIndex++) {
+        outputFile << file->segments[segmentIndex];
+        
+        if (segmentIndex < file->segmentCount - 1) {
+            outputFile << '\n';
+        }
+    }
+
+    outputFile.close();
 }

@@ -1,0 +1,1546 @@
+[CLIENT 3] opened log file
+[CLIENT 3] parsing input file in3.txt
+[CLIENT 3] parsed 0 owned files and 3 desired files
+[CLIENT 3] received ACK from TRACKER.
+[CLIENT 3] starting download
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] File file1 has following seeds: 3 2 1 
+[CLIENT 3] requesting segment 0 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 99 more segments from file1
+[CLIENT 3] requesting segment 1 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 98 more segments from file1
+[CLIENT 3] requesting segment 2 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 97 more segments from file1
+[CLIENT 3] requesting segment 3 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 96 more segments from file1
+[CLIENT 3] requesting segment 4 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 95 more segments from file1
+[CLIENT 3] requesting segment 5 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT [DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 94 more segments from file1
+[CLIENT 3] requesting segment 6 from file1
+[UPLOAD CLIENT 3] declined request for segment [DOWNLOAD CLIENT 103] querying seed 1
+2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 10 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 10 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 10 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 93 more segments from file1
+[CLIENT 3] requesting segment 7 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 10 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] needs 92 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 11 from 2
+[CLIENT 3] needs 92 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] requesting segment 8 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+EGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 11 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 11 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 11 from 2
+[UPLOAD CLIENT 3] declined request for segment 11[CLIENT 3] needs 91 more segments from file1
+[CLIENT 3] requesting segment 9 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 90 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 12 from 1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 12 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 15 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 14 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 15 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 15 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 15 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 15 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 15 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 16 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 16 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 19 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 19 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 19 from 1
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 10 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 22 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 21 from 1
+
+[CLIENT 3] needs 89 more segments from file1
+[CLIENT 3] requesting segment 11 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 21 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 88 more segments from file1
+[CLIENT 3] requesting segment 12 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 23 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 21 from 1
+[UPLOAD CLIENT 3] declined request for segment 21[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] needs 87 more segments from file1
+[CLIENT 3] requesting segment 13 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+m file1
+rom 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 23 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 86 more segments from file1
+[CLIENT 3] requesting segment 14 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 85 more segments from file1
+[CLIENT 3] requesting segment 15 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 84 more segments from file1
+[CLIENT 3] requesting segment 16 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 25 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 23 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 83 more segments from file1
+[CLIENT 3] requesting segment 17 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 23 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 25 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 82 more segments from file1
+[CLIENT 3] requesting segment 18 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+m file1
+rom 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+3] declined request for segment 23 from 1
+[CLIENT 3] needs 81 more segments from file1
+[CLIENT 3] requesting segment 19 from file[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 25 from 2
+[UPLOAD CLIENT 3] declined request for segme[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 25 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 80 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 26 from 2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 20 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 79 more segments from file1
+[CLIENT 3] requesting segment 21 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+25 from 1
+[CLIENT 3] needs 78 more segments from file1
+25 from 1
+[CLIENT 3] requesting segment 22 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 28 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[CLIENT 3] needs 77 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[CLIENT 3] requesting segment 23 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segme[UPLOAD CLIENT 3] declined request for segment 28 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 76 more segments from file1
+[CLIENT 3] requesting segment 24 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 25 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 75 more segments from file1
+[CLIENT 3] requesting segment 25 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 74 more segments from file1
+[CLIENT 3] requesting segment 26 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 73 more segments from file1
+[CLIENT 3] requesting segment 27 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 30 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 72 more segments from file1
+[CLIENT 3] requesting segment 28 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 71 more segments from file1
+[CLIENT 3] requesting segment 29 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 70 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT [UPLOAD CLIENT 3] received REQUEST_SEGMENT from 3
+[UPLOAD CLIENT 3] declined request for segment 28 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+100 segments for file1
+[UPLOAD CLIENT 3] declined request for segment 31 from 2
+100 segments for file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 28 from 1
+[DOWNLOAD CLIENT 3] received 50 segments for file2[2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+2
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[UPLOAD CLIENT 3] declined request for segment 31 from 2
+[CLIENT 3] requesting segment 30 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 31 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 69 more segments from file1
+[CLIENT 3] requesting segment 31 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 68 more segments from file1
+[CLIENT 3] requesting segment 32 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 67 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] requesting segment 33 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] querying seed 1
+EGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 33 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 66 more segments from file1
+[CLIENT 3] requesting segment 34 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 33 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 34 from 2
+3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 34 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 65 more segments from file1
+[CLIENT 3] requesting segment 35 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] needs 64 more segments from file1
+[UPLOAD CLIENT 3] accepted request for segment 35 from 2
+[CLIENT 3] needs 64 more segments from file1
+[CLIENT 3] requesting segment 36 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 36 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed [
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+ from seed [
+3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 36 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 63 more segments from file1
+[CLIENT 3] requesting segment 37 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 39 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 62 more segments from file1
+[CLIENT 3] requesting segment 38 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 61 more segments from file1
+[CLIENT 3] requesting segment 39 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 40 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 60 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[UPLOAD CLIENT 3] declined request for segment 43 from 1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 40 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 43 from 1
+[UPLOAD CLIENT 3] declined request for segment 43 fr[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 40 from 2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 40 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 59 more segments from file1
+[CLIENT 3] requesting segment 41 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 45 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 58 more segments from file1
+[CLIENT 3] requesting segment 42 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+m file1
+rom 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 45 from 1
+[CLIENT 3] needs 57 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 45 from 1
+[CLIENT 3] requesting segment 43 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 43 from 2
+[UPLOAD CLIENT 3] declined request for segme[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 45 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 43 from 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] declined request for segment 43 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 56 more segments from file1
+[CLIENT 3] requesting segment 44 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 55 more segments from file1
+[CLIENT 3] requesting segment 45 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+m file1
+rom 1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 54 more segments from file1
+[CLIENT 3] requesting segment 46 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 46 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 53 more segments from file1
+[CLIENT 3] requesting segment 47 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 46 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 52 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 48 from file1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 47 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 46 from 1
+[UPLOAD CLIENT 3] declined request for segme[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 51 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 49 from file1
+3] declined request for segment 46 from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+3] declined request for segment 46 from 1
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 49 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 50 more segments from file1
+[CLIENT 3] updating seeds
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 49 from 2
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT [UPLOAD CLIENT 3] received 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 50 from 2
+ segments for file3
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 50 from file1
+[UPLOAD CLIENT 3] declined request for segment 49 from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] declined request for segment 49 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 50 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 49 more segments from file1
+[CLIENT 3] requesting segment 51 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 48 more segments from file1
+[CLIENT 3] requesting segment 52 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 47 more segments from file1
+[CLIENT 3] requesting segment 53 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 52 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 51 from 1
+[UPLOAD CLIENT 3] declined request for segment 51[CLIENT 3] needs 46 more segments from file1
+[CLIENT 3] requesting segment 54 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 52 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 45 more segments from file1
+[CLIENT 3] requesting segment 55 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 54 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 44 more segments from file1
+[CLIENT 3] requesting segment 56 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 53 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 43 more segments from file1
+[CLIENT 3] requesting segment 57 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 42 more segments from file1
+[CLIENT 3] requesting segment 58 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 54 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 41 more segments from file1
+[CLIENT 3] requesting segment 59 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply [UPLOAD CLIENT 2 from seed 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 59 from 2
+
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 40 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+ 1
+[UPLOAD CLIENT 3] declined request for segment 55 from 1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 59 from 2
+[UPLOAD CLIENT 3] accepted request for segment 59 fr[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 60 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 60 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 39 more segments from file1
+[CLIENT 3] requesting segment 61 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 58 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 38 more segments from file1
+[CLIENT 3] requesting segment 62 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 37 more segments from file1
+[CLIENT 3] requesting segment 63 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 59 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 36 more segments from file1
+[CLIENT 3] requesting segment 64 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 59 from 1
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 62 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 35 more segments from file1
+[CLIENT 3] requesting segment 65 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+1
+[UPLOAD CLIENT 3] accepted request for segment 63 from 2
+1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 60 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 34 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 60 from 1
+[CLIENT 3] needs 34 more segments from file1
+[CLIENT 3] requesting segment 66 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 60 from 1
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 61 from 1
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 61 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 33 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 67 from file1
+[UPLOAD CLIENT 3] declined request for segment 61 from 1
+[CLIENT 3] requesting segment 67 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT [DOWNLOAD CLIENT 3] declined request for segment 67 from 2
+1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 67 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 63 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 32 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 68 from file1
+[UPLOAD CLIENT 3] declined request for segment 63 from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] declined request for segment 63 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 69 from 2
+[CLIENT 3] needs 31 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 69 from 2
+[CLIENT 3] requesting segment 69 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 63 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 69 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 63 from 1
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 30 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[UPLOAD CLIENT 3] declined request for segment 70 from 2
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 70 from 2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3[DOWNLOAD CLIENT t for segment  1
+
+rom 2
+AD CLIE65 from 3] received 1
+file3
+[CLIENT 3] requesting segment 70 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 29 more segments from file1
+[CLIENT 3] requesting segment 71 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment [DOWNLOAD CLIENT 71 from 2
+3] received reply 2 from seed 1
+[CLIENT 3] needs 28 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 72 from file1
+[UPLOAD CLIENT 3] declined request for segment 66 from 1
+[CLIENT 3] requesting segment 72 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 27 more segments from file1
+[CLIENT 3] requesting segment 73 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[UPLOAD CLIENT 3] accepted request for segment 72 from 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] accepted request for segment 72 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 26 more segments from file1
+[CLIENT 3] requesting segment 74 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 67 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 25 more segments from file1
+[CLIENT 3] requesting segment 75 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 75 from 2
+[CLIENT 3] needs 24 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 75 from 2
+[CLIENT 3] requesting segment 76 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 69 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 75 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 23 more segments from file1
+[CLIENT 3] requesting segment 77 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 22 more segments from file1
+[CLIENT 3] requesting segment 78 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 78 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 71 from 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 78 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 71 from 1
+[CLIENT 3] needs 21 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] requesting segment 79 from file1
+[UPLOAD CLIENT 3] accepted request for segment 78 from 2
+[CLIENT 3] requesting segment 79 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 20 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 81 from 2
+[CLIENT 3] requesting segment 80 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[UPLOAD CLIENT 3] declined request for segment 74 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 81 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 19 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 81 from file1
+[UPLOAD CLIENT 3] declined request for segment 74 from 1
+[CLIENT 3] requesting segment 81 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] needs 18 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 1
+[CLIENT 3] requesting segment 82 from file1
+[UPLOAD CLIENT 3] declined request for segment 74 from 1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] declined request for segment 74 from 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 17 more segments from file1
+[CLIENT 3] requesting segment 83 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 83 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 16 more segments from file1
+[CLIENT 3] requesting segment 84 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] needs 15 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] requesting segment 85 from file1
+[UPLOAD CLIENT 3] declined request for segment 86 from 2
+[CLIENT 3] requesting segment 85 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 86 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 14 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] requesting segment 86 from file1
+[UPLOAD CLIENT 3] declined request for segment 86 from 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] declined request for segment 86 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 13 more segments from file1
+[CLIENT 3] requesting segment 87 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] needs 12 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[CLIENT 3] requesting segment 88 from file1
+[UPLOAD CLIENT 3] declined request for segment 88 from 2
+[CLIENT 3] requesting segment 88 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 88 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 88 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 88 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 11 more segments from file1
+[CLIENT 3] requesting segment 89 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 10 more segments from file1
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 90 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 9 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment [CLIENT 91 from 3] requesting segment 91file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 91 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[UPLOAD CLIENT 3] declined request for segment 93 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 8 more segments from file1
+[CLIENT [UPLOAD CLIENT 3] received REQUEST_SEGMENT from 92 from 2ile1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] querying seed 1
+EQUEST_SEGMENT from 92 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 93 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 7 more segments from file1
+[CLIENT 3] requesting segment 93 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 93 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 6 more segments from file1
+[CLIENT 3] requesting segment 94 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 94 from 2
+[CLIENT 3] needs 5 more segments from file1
+[CLIENT 3LIENT 3] declined request for segment 94 from 2
+95 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 94 from 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] declined request for segment 95 from 2
+[CLIENT 3] needs 4 more segments from file1
+[UPLOAD CLIENT 3] declined request for segment 95 from 2
+[CLIENT 3] requesting segment 96 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 3 more segments from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 96 from 2
+[CLIENT 3] requesting segment 97 from file1
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 2 more segments from file1
+[CLIENT 3] requesting segment 98 from file1
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 1 from seed 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] declined request for segment 98 from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 1 more segments from file1
+[CLIENT 3] requesting segment 99 from file1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] querying seed 1
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[UPLOAD CLIENT 3] accepted request for segment 98 from 2
+[CLIENT 3] needs 0 more segments from file1
+[CLIENT 3] finished downloading file1
+[CLIENT 3] finished downloading file1
+ segment 98 from 2
+[UPLOAD CLIENT 3] received REQUEST_SEGMENT from 2
+[UPLOAD CLIENT 3] accepted request for segment 99 from 2
+[CLIENT 3] starting download of file2
+[CLIENT 3] requesting segment 0 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 49 more segments from file2
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 1 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 48 more segments from file2
+[CLIENT 3] requesting segment 2 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 47 more segments from file2
+[CLIENT 3] requesting segment 3 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 46 more segments from file2
+[CLIENT 3] requesting segment 4 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 45 more segments from file2
+[CLIENT 3] requesting segment 5 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 44 more segments from file2
+[CLIENT 3] requesting segment 6 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 43 more segments from file2
+[CLIENT 3] requesting segment 7 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 42 more segments from file2
+[CLIENT 3] requesting segment 8 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 41 more segments from file2
+[CLIENT 3] requesting segment 9 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 40 more segments from file2
+[CLIENT 3] requesting segment 10 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 39 more segments from file2
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 11 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 38 more segments from file2
+[CLIENT 3] requesting segment 12 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 37 more segments from file2
+[CLIENT 3] requesting segment 13 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 36 more segments from file2
+[CLIENT 3] requesting segment 14 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 35 more segments from file2
+[CLIENT 3] requesting segment 15 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 34 more segments from file2
+[CLIENT 3] requesting segment 16 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 33 more segments from file2
+[CLIENT 3] requesting segment 17 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 32 more segments from file2
+[CLIENT 3] requesting segment 18 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 31 more segments from file2
+[CLIENT 3] requesting segment 19 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 30 more segments from file2
+[CLIENT 3] requesting segment 20 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 29 more segments from file2
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 21 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 28 more segments from file2
+[CLIENT 3] requesting segment 22 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 27 more segments from file2
+[CLIENT 3] requesting segment 23 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 26 more segments from file2
+[CLIENT 3] requesting segment 24 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 25 more segments from file2
+[CLIENT 3] requesting segment 25 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 24 more segments from file2
+[CLIENT 3] requesting segment 26 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 23 more segments from file2
+[CLIENT 3] requesting segment 27 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 22 more segments from file2
+[CLIENT 3] requesting segment 28 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 21 more segments from file2
+[CLIENT 3] requesting segment 29 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 20 more segments from file2
+[CLIENT 3] requesting segment 30 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 19 more segments from file2
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 31 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 18 more segments from file2
+[CLIENT 3] requesting segment 32 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 17 more segments from file2
+[CLIENT 3] requesting segment 33 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 16 more segments from file2
+[CLIENT 3] requesting segment 34 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 15 more segments from file2
+[CLIENT 3] requesting segment 35 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 14 more segments from file2
+[CLIENT 3] requesting segment 36 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 13 more segments from file2
+[CLIENT 3] requesting segment 37 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 12 more segments from file2
+[CLIENT 3] requesting segment 38 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 11 more segments from file2
+[CLIENT 3] requesting segment 39 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 10 more segments from file2
+[CLIENT 3] requesting segment 40 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 9 more segments from file2
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 41 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 8 more segments from file2
+[CLIENT 3] requesting segment 42 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 7 more segments from file2
+[CLIENT 3] requesting segment 43 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 6 more segments from file2
+[CLIENT 3] requesting segment 44 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 5 more segments from file2
+[CLIENT 3] requesting segment 45 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 4 more segments from file2
+[CLIENT 3] requesting segment 46 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 3 more segments from file2
+[CLIENT 3] requesting segment 47 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 2 more segments from file2
+[CLIENT 3] requesting segment 48 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 1 more segments from file2
+[CLIENT 3] requesting segment 49 from file2
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 0 more segments from file2
+[CLIENT 3] finished downloading file2
+[CLIENT 3] starting download of file3
+[CLIENT 3] requesting segment 0 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 74 more segments from file3
+[CLIENT 3] requesting segment 1 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 73 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 2 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 72 more segments from file3
+[CLIENT 3] requesting segment 3 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 71 more segments from file3
+[CLIENT 3] requesting segment 4 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 70 more segments from file3
+[CLIENT 3] requesting segment 5 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 69 more segments from file3
+[CLIENT 3] requesting segment 6 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 68 more segments from file3
+[CLIENT 3] requesting segment 7 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 67 more segments from file3
+[CLIENT 3] requesting segment 8 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 66 more segments from file3
+[CLIENT 3] requesting segment 9 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 65 more segments from file3
+[CLIENT 3] requesting segment 10 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 64 more segments from file3
+[CLIENT 3] requesting segment 11 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 63 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 12 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 62 more segments from file3
+[CLIENT 3] requesting segment 13 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 61 more segments from file3
+[CLIENT 3] requesting segment 14 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 60 more segments from file3
+[CLIENT 3] requesting segment 15 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 59 more segments from file3
+[CLIENT 3] requesting segment 16 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 58 more segments from file3
+[CLIENT 3] requesting segment 17 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 57 more segments from file3
+[CLIENT 3] requesting segment 18 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 56 more segments from file3
+[CLIENT 3] requesting segment 19 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 55 more segments from file3
+[CLIENT 3] requesting segment 20 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 54 more segments from file3
+[CLIENT 3] requesting segment 21 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 53 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 22 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 52 more segments from file3
+[CLIENT 3] requesting segment 23 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 51 more segments from file3
+[CLIENT 3] requesting segment 24 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 50 more segments from file3
+[CLIENT 3] requesting segment 25 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 49 more segments from file3
+[CLIENT 3] requesting segment 26 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 48 more segments from file3
+[CLIENT 3] requesting segment 27 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 47 more segments from file3
+[CLIENT 3] requesting segment 28 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 46 more segments from file3
+[CLIENT 3] requesting segment 29 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 45 more segments from file3
+[CLIENT 3] requesting segment 30 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 44 more segments from file3
+[CLIENT 3] requesting segment 31 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 43 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 32 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 42 more segments from file3
+[CLIENT 3] requesting segment 33 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 41 more segments from file3
+[CLIENT 3] requesting segment 34 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 40 more segments from file3
+[CLIENT 3] requesting segment 35 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 39 more segments from file3
+[CLIENT 3] requesting segment 36 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 38 more segments from file3
+[CLIENT 3] requesting segment 37 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 37 more segments from file3
+[CLIENT 3] requesting segment 38 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 36 more segments from file3
+[CLIENT 3] requesting segment 39 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 35 more segments from file3
+[CLIENT 3] requesting segment 40 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 34 more segments from file3
+[CLIENT 3] requesting segment 41 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 33 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 42 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 32 more segments from file3
+[CLIENT 3] requesting segment 43 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 31 more segments from file3
+[CLIENT 3] requesting segment 44 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 30 more segments from file3
+[CLIENT 3] requesting segment 45 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 29 more segments from file3
+[CLIENT 3] requesting segment 46 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 28 more segments from file3
+[CLIENT 3] requesting segment 47 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 27 more segments from file3
+[CLIENT 3] requesting segment 48 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 26 more segments from file3
+[CLIENT 3] requesting segment 49 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 25 more segments from file3
+[CLIENT 3] requesting segment 50 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 24 more segments from file3
+[CLIENT 3] requesting segment 51 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 23 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 52 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 22 more segments from file3
+[CLIENT 3] requesting segment 53 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 21 more segments from file3
+[CLIENT 3] requesting segment 54 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 20 more segments from file3
+[CLIENT 3] requesting segment 55 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 19 more segments from file3
+[CLIENT 3] requesting segment 56 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 18 more segments from file3
+[CLIENT 3] requesting segment 57 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 17 more segments from file3
+[CLIENT 3] requesting segment 58 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 16 more segments from file3
+[CLIENT 3] requesting segment 59 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 15 more segments from file3
+[CLIENT 3] requesting segment 60 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 14 more segments from file3
+[CLIENT 3] requesting segment 61 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 13 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 62 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 12 more segments from file3
+[CLIENT 3] requesting segment 63 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 11 more segments from file3
+[CLIENT 3] requesting segment 64 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 10 more segments from file3
+[CLIENT 3] requesting segment 65 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 9 more segments from file3
+[CLIENT 3] requesting segment 66 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 8 more segments from file3
+[CLIENT 3] requesting segment 67 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 7 more segments from file3
+[CLIENT 3] requesting segment 68 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 6 more segments from file3
+[CLIENT 3] requesting segment 69 from file3
+[DOWNLOAD CLIENT 3] querying seed 1
+[DOWNLOAD CLIENT 3] received reply 2 from seed 1
+[CLIENT 3] needs 5 more segments from file3
+[CLIENT 3] requesting segment 70 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 4 more segments from file3
+[CLIENT 3] requesting segment 71 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 3 more segments from file3
+[CLIENT 3] updating seeds
+[DOWNLOAD CLIENT 3] requesting seeds for file1
+[DOWNLOAD CLIENT 3] received 100 segments for file1
+[DOWNLOAD CLIENT 3] requesting seeds for file2
+[DOWNLOAD CLIENT 3] received 50 segments for file2
+[DOWNLOAD CLIENT 3] requesting seeds for file3
+[DOWNLOAD CLIENT 3] received 75 segments for file3
+[CLIENT 3] requesting segment 72 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 2 more segments from file3
+[CLIENT 3] requesting segment 73 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 1 more segments from file3
+[CLIENT 3] requesting segment 74 from file3
+[DOWNLOAD CLIENT 3] querying seed 2
+[DOWNLOAD CLIENT 3] received reply 2 from seed 2
+[CLIENT 3] needs 0 more segments from file3
+[CLIENT 3] finished downloading file3
+[UPLOAD CLIENT 3] received LOG_OFF signal

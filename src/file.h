@@ -4,15 +4,11 @@
 #include <vector>
 #include <unordered_map>
 
+#include "common.h"
+
 using namespace std;
 
 class File {
-    private:
-        enum FileStatus {
-            INCOMPLETE,
-            COMPLETE
-        };
-
     public:
         File() = default;
         File(string name) { this->name = name; }
@@ -26,6 +22,13 @@ class File {
         bool operator!=(const File &file) const {
             return name != file.name;
         }
+
+        // Override hash
+        struct Hash {
+            size_t operator()(const File &file) const {
+                return hash<string>{}(file.name);
+            }
+        };
 
         string name;
         int segmentCount;
