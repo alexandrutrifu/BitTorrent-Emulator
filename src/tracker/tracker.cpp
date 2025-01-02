@@ -117,6 +117,17 @@ void trackers::Tracker::handleRequests() {
                 break;
         }
     }
+
+    // Send LOG_OFF signal to all clients
+    // Not through broadcast, so that clients can handle the signal inside upload() loop
+    int logOff = clientRequestIndex(LOG_OFF);
+
+    for (int index = 1; index <= this->clientCount; index++) {
+        MPI_Send(&logOff, 1, MPI_INT, index, 0, MPI_COMM_WORLD);
+    }
+
+    // Debug
+    cout << "[TRACKER] sent LOG_OFF signal to all clients\n";
 }
 
 void trackers::Tracker::handleSeedRequest(int clientIndex) {
