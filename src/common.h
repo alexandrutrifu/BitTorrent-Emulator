@@ -16,7 +16,8 @@ enum TrackerRequest {
 enum ClientRequest {
     REQUEST_SEGMENT,
     DECLINED,
-    ACCEPTED
+    ACCEPTED,
+    LOG_OFF
 };
 
 enum ClientStatus {
@@ -62,6 +63,8 @@ int clientRequestIndex(ClientRequest request) {
             return 1;
         case ACCEPTED:
             return 2;
+        case LOG_OFF:
+            return 3;
         default:
             return -1;
     }
@@ -75,6 +78,8 @@ ClientRequest indexToClientRequest(int index) {
             return ClientRequest::DECLINED;
         case 2:
             return ClientRequest::ACCEPTED;
+        case 3:
+            return ClientRequest::LOG_OFF;
         default:
             return ClientRequest::REQUEST_SEGMENT;
     }
