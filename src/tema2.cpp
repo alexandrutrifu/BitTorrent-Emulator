@@ -38,6 +38,8 @@ void *upload_thread_func(void *arg)
 {
     Client *client = (Client *) arg;
 
+    client->upload();
+
     return NULL;
 }
 
