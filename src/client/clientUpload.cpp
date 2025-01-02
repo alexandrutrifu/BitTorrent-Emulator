@@ -13,7 +13,7 @@ void clients::Client::upload() {
 
         if (request == LOG_OFF) {
             // Debug
-            cout << "[CLIENT " << this->id << "] received LOG_OFF signal\n";
+            this->clientLog << "[CLIENT " << this->id << "] received LOG_OFF signal\n";
             break;
         }
 

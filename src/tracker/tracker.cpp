@@ -2,17 +2,17 @@
 
 void trackers::Tracker::printSwarms() {
     for (auto& swarm: this->swarms) {
-        cout << "[TRACKER] " << swarm.first->name << " is owned by clients: ";
+        this->trackerLog << "[TRACKER] " << swarm.first->name << " is owned by clients: ";
 
         for (auto& client: swarm.second) {
-            cout << client << " ";
+            this->trackerLog << client << " ";
         }
 
-        cout << '\n';
+        this->trackerLog << '\n';
 
         // Print segments
         for (int segmentIndex = 0; segmentIndex < swarm.first->segmentCount; segmentIndex++) {
-            cout << "[TRACKER] " << swarm.first->segments[segmentIndex] << '\n';
+            this->trackerLog << "[TRACKER] " << swarm.first->segments[segmentIndex] << '\n';
         }
     }
 }
@@ -35,7 +35,7 @@ void trackers::Tracker::awaitClientInput()
             MPI_Recv(fileName, 255, MPI_CHAR, index, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
             MPI_Recv(&segmentCount, 1, MPI_INT, index, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
-            cout << "[TRACKER] received " << fileName << " with " << segmentCount << " segments from CLIENT " << index << "\n";
+            this->trackerLog << "[TRACKER] received " << fileName << " with " << segmentCount << " segments from CLIENT " << index << "\n";
 
             File *file = new File(fileName);
 
@@ -127,7 +127,7 @@ void trackers::Tracker::handleRequests() {
     }
 
     // Debug
-    cout << "[TRACKER] sent LOG_OFF signal to all clients\n";
+    this->trackerLog << "[TRACKER] sent LOG_OFF signal to all clients\n";
 }
 
 void trackers::Tracker::handleSeedRequest(int clientIndex) {

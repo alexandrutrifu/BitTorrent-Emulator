@@ -9,6 +9,8 @@
 #include "../file.h"
 #include "../common.h"
 
+using namespace std;
+
 namespace trackers {
     class Tracker {
     private:
@@ -31,8 +33,11 @@ namespace trackers {
         int clientCount;
         char ACK[4] = "ACK";
 
-        std::unordered_map<int, ClientStatus> clientStates;
-        std::unordered_map<File *, unordered_set<int> > swarms;   // (File, Set<clientIndex>)
-        std::unordered_map<string, int> segmentCounts;            // (fileName, segmentCount)
+        unordered_map<int, ClientStatus> clientStates;
+        unordered_map<File *, unordered_set<int> > swarms;   // (File, Set<clientIndex>)
+        unordered_map<string, int> segmentCounts;            // (fileName, segmentCount)
+
+        // Log files
+        ofstream trackerLog;
     };
 }

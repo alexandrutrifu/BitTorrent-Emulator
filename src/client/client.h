@@ -49,6 +49,9 @@ namespace clients {
         int ownedFileCount;
         int desiredFileCount;
 
+        // Log files
+        ofstream clientLog;
+
     private:
         vector<File *> ownedFiles;
         vector<File *> desiredFiles;

@@ -17,7 +17,7 @@ int clients::Client::parseInput()
     string inputFileName = "in" + to_string(id) + ".txt";
 
     // Debug
-    cout << "[CLIENT " << id << "] parsing input file " << inputFileName << "\n";
+    this->clientLog << "[CLIENT " << id << "] parsing input file " << inputFileName << "\n";
     
     ifstream inputFile("/Users/alex/facultate/anul3/apd/tema2-apd/checker/tests/test1/" + inputFileName);
     if (!inputFile.is_open()) {
@@ -61,7 +61,7 @@ int clients::Client::parseInput()
     }
 
     // Debug
-    cout << "[CLIENT " << id << "] parsed " << this->ownedFileCount << " owned files and " << this->desiredFileCount << " desired files\n";
+    this->clientLog << "[CLIENT " << id << "] parsed " << this->ownedFileCount << " owned files and " << this->desiredFileCount << " desired files\n";
 
     // Close input file
     inputFile.close();

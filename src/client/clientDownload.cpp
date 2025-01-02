@@ -1,6 +1,9 @@
 #include "client.h"
 
 void clients::Client::download() {
+    // Debug
+    this->clientLog << "[CLIENT " << this->id << "] starting download\n";
+
     // Request seeds for desired files
     this->requestSeeds();
 
@@ -13,12 +16,18 @@ void clients::Client::download() {
         // Request segment from seeds
         int segmentIndex = this->nextDesiredSegment(currentDownload);
 
+        // Debug
+        this->clientLog << "[CLIENT " << this->id << "] requesting segment " << segmentIndex << " from " << currentDownload->name << '\n';
+
         int ret = this->querySwarm(currentDownload, segmentIndex);
 
         if (ret == -1) {    // Error
             cerr << "Error querying swarm\n";
             return;
         }
+
+        // Debug
+        this->clientLog << "[CLIENT " << this->id << "] needs " << currentDownload->segmentsLacked << " more segments from " << currentDownload->name << '\n';
 
         // Move to next segment/file
         if (currentDownload->segmentsLacked == 0) {
@@ -56,6 +65,9 @@ int clients::Client::querySwarm(File *file, int segmentIndex) {
             continue;
         }
 
+        // Debug
+        this->clientLog << "[CLIENT " << this->id << "] querying seed " << seed << '\n';
+
         // Send request for segment
         int request = clientRequestIndex(REQUEST_SEGMENT);
 
@@ -73,6 +85,9 @@ int clients::Client::querySwarm(File *file, int segmentIndex) {
 
         // Parse reply
         ClientRequest clientRequest = indexToClientRequest(reply);
+
+        // Debug
+        this->clientLog << "[CLIENT " << this->id << "] received reply " << clientRequest << " from seed " << seed << '\n';
 
         switch (clientRequest) {
             case DECLINED:

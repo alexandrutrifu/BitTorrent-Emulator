@@ -47,6 +47,13 @@ void tracker(int numtasks, int rank) {
     // Create new tracker instance
     Tracker *tracker = new Tracker(numtasks - 1);
 
+    // Open log file
+    tracker->trackerLog.open("tracker.log");
+    if (!tracker->trackerLog.is_open()) {
+        cout << "Error opening log file\n";
+        exit(-1);
+    }
+
     // Wait for clients to send their lists of files
     tracker->awaitClientInput();
 
@@ -54,7 +61,7 @@ void tracker(int numtasks, int rank) {
     tracker->handleRequests();
 
     // Debug
-    cout << "[TRACKER] all clients are done\n";
+    tracker->trackerLog << "[TRACKER] all clients are done\n";
 }
 
 void peer(int numtasks, int rank) {
@@ -68,6 +75,13 @@ void peer(int numtasks, int rank) {
     // Create new client instance
     Client *client = new Client(rank);
 
+    // Open log file
+    client->clientLog.open("download.log");
+    if (!client->clientLog.is_open()) {
+        cout << "Error opening log file\n";
+        exit(-1);
+    }
+
     // Start parsing input file
     client->parseInput();
 
@@ -79,7 +93,7 @@ void peer(int numtasks, int rank) {
 
     MPI_Bcast(reply, 4, MPI_CHAR, TRACKER_RANK, MPI_COMM_WORLD);
 
-    cout << "[CLIENT " << rank << "] received " << reply << " from TRACKER.\n";
+    client->clientLog << "[CLIENT " << rank << "] received " << reply << " from TRACKER.\n";
 
     r = pthread_create(&download_thread, NULL, download_thread_func, (void *) client);
     if (r) {
