@@ -1,4 +1,4 @@
-# Topic 2 - APD
+# BitTorrent Emulator
 
 ## Structure
 
