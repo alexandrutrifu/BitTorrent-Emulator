@@ -17,24 +17,13 @@ void *download_thread_func(void *arg)
         // Send finished signal to tracker
         int finished = trackerRequestIndex(TrackerRequest::FINISHED);
 
-        // Log buffer size
-        printf("Sending finished signal with buffer size: %lu\\n", sizeof(finished));
         MPI_Send(&finished, 1, MPI_INT, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD);    
 
         // Await confirmation
         char reply[4];
         MPI_Status status;
         int count;
-
-        // Probe for the incoming message
-        MPI_Probe(TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
-        MPI_Get_count(&status, MPI_CHAR, &count);
-        printf("Receiving reply with expected buffer size: 4, actual size: %d\\n", count);
-
-        if (count > 4) {
-            fprintf(stderr, "Warning: Incoming message size %d exceeds buffer size 4\\n", count);
-        }
-
+        
         MPI_Recv(reply, 4, MPI_CHAR, TRACKER_RANK, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
 
         return NULL;

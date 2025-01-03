@@ -28,24 +28,13 @@ void clients::Client::upload() {
         int fileSize;
         int segmentIndex;
 
-        // Log wait
-        // this->clientLog << "[UPLOAD CLIENT " << this->id << "] waiting for file size from " << clientIndex << '\n' << std::flush;
-
         MPI_Recv(&fileSize, 1, MPI_INT, clientIndex, UPLOAD_TAG, MPI_COMM_WORLD, &status);
-
-        // this->clientLog << "[UPLOAD CLIENT " << this->id << "] received file size " << fileSize << " from " << clientIndex << '\n' << std::flush;
 
         char fileName[fileSize];
 
         MPI_Recv(fileName, fileSize, MPI_CHAR, clientIndex, UPLOAD_TAG, MPI_COMM_WORLD, &status);
 
-        // this->clientLog << "[UPLOAD CLIENT " << this->id << "] received file name " << fileName << " from " << clientIndex << '\n' << std::flush;
-
         MPI_Recv(&segmentIndex, 1, MPI_INT, clientIndex, UPLOAD_TAG, MPI_COMM_WORLD, &status);
-
-        // this->clientLog << "[UPLOAD CLIENT " << this->id << "] received segment index " << segmentIndex << " from " << clientIndex << '\n' << std::flush;
-
-        bool found = false;
 
         // Find file
         for (File *file: this->ownedFiles) {
@@ -73,7 +62,6 @@ void clients::Client::upload() {
                 // Send segment
                 MPI_Send(file->segments[segmentIndex].c_str(), SEGMENT_SIZE, MPI_CHAR, clientIndex, DOWNLOAD_TAG, MPI_COMM_WORLD);
 
-                found = true;
                 break;
             }
         }

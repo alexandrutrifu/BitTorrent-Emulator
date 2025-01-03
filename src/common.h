@@ -16,8 +16,7 @@ enum FileStatus {
 enum TrackerRequest {
     REQUEST_SEEDS,
     DOWNLOAD_COMPLETE,
-    FINISHED,
-    UPDATE_SWARM
+    FINISHED
 };
 
 enum ClientRequest {
@@ -47,8 +46,6 @@ inline int trackerRequestIndex(TrackerRequest request) {
             return 1;
         case FINISHED:
             return 2;
-        case UPDATE_SWARM:
-            return 3;
         default:
             return -1;
     }
@@ -62,8 +59,6 @@ inline TrackerRequest indexToTrackerRequest(int index) {
             return TrackerRequest::DOWNLOAD_COMPLETE;
         case 2:
             return TrackerRequest::FINISHED;
-        case 3:
-            return TrackerRequest::UPDATE_SWARM;
         default:
             return TrackerRequest::REQUEST_SEEDS;
     }

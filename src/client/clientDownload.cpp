@@ -93,7 +93,6 @@ int clients::Client::querySwarm(File *file, int segmentIndex) {
         // Send request for segment
         int request = clientRequestIndex(REQUEST_SEGMENT);
 
-        // Log buffer size
         MPI_Send(&request, 1, MPI_INT, seed, UPLOAD_TAG, MPI_COMM_WORLD);
 
         int fileSize = file->name.size() + 1;

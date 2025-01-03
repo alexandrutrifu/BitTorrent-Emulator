@@ -80,9 +80,6 @@ void trackers::Tracker::awaitClientInput()
         }
     }
 
-    // Print swarms
-    // this->printSwarms();
-
     // After every client has sent their input, broadcast ACK signal
     MPI_Bcast(this->ACK, 4, MPI_CHAR, TRACKER_RANK, MPI_COMM_WORLD);
 }
@@ -119,18 +116,6 @@ void trackers::Tracker::handleRequests() {
             case FINISHED:
                 handleFinishedClient(clientIndex);
                 pendingClients--;
-                break;
-            case UPDATE_SWARM:
-                // Receive file size and name
-                int fileSize;
-
-                MPI_Recv(&fileSize, 1, MPI_INT, clientIndex, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
-
-                char fileName[fileSize];
-
-                MPI_Recv(fileName, fileSize, MPI_CHAR, clientIndex, COMMUNICATION_TAG, MPI_COMM_WORLD, &status);
-
-                handleUpdateSwarm(clientIndex, fileName);
                 break;
         }
     }
