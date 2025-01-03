@@ -1,0 +1,8 @@
+.vscode
+.idea
+checker
+*.zip
+*.sh
+Dockerfile
+docker-compose.yml
+LICENSE
